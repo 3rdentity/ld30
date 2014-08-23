@@ -1,9 +1,8 @@
 //############STORY############
 
 var firstMirrArr = [
-  "Whatever are you staring at?",
-  "Aliqua cillum ullamco magna eiusmod deserunt occaecat est aute consequat.",
-  "Esse sit mollit eu pariatur aliquip qui culpa consectetur est tempor anim anim cupidatat."
+  "What are you staring at?",
+  "You made me this way."
 ]
 
 //############GAME############
