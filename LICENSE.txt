@@ -1,0 +1,6 @@
+##############################################################################
+TERMS OF USE - COPYRIGHT (c) 2014 Ryan Combes
+##############################################################################
+
+While the source for this entire project is visible this project is not open
+source. All rights are reserved.
