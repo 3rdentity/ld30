@@ -1,3 +1,4 @@
 -minify
 -check for TODO's in code and take care of them
 -remove firstMirr. There's only the one mirror in the game
+-ff button. position absolute under mute button. change typewrite.speeds
