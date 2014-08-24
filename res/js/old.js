@@ -86,7 +86,10 @@ function show(name) {
     document.getElementById(name).style.display="initial";
   }
 }
-
+/*TODO if content is pointed at string with HTML markup in it then aLink's/selectable
+text will work inline. This won't present a visual problem either, as text will be
+rendered instantly.
+This would be necessary if wanting to use typewrite with Twine-like games*/
 /*############TYPEWRITE############
 
 'types' out a specified or random array/line, denoted by 'arr', to a specified object, denoted by 'obj'

@@ -1,5 +1,5 @@
 //############STORY############
-var firstMirrArr = [
+var mirrArr = [
   "What are you staring at?",
   "You made me this way.",
   "You remember.",
@@ -11,7 +11,7 @@ var firstMirrArr = [
   "As you created me.",
   "I still remember what you called me."
 ]
-var firstMirrHandArr=[
+var mirrHandArr=[
   "Dawn",
   "You named me as if I was a close friend. A playmate.",
   "But I'm your shadow.",
@@ -20,48 +20,63 @@ var firstMirrHandArr=[
   "You feed me and keep me safe.",
   "Don't you?"
 ]
-var firstMirrNoSafeArr=[
+var mirrNoSafeArr=[
   "No? Why do you entertain me then?",
   "Keep my company and stick around?",
   "I exist, even if you deny it, I'm still here!",
   "I'm always here!",
   "I am yours and you are mine!"
 ]
-var firstMirrYesSafeArr=[
+var mirrYesSafeArr=[
   "That's right. You've always been taking care of me.",
   "I've been with you since the beginning.",
   "Protecting you, telling you to stay away from people.",
   "They're awful, I tell you.",
   "Stay here with me."
 ]
-var firstMirrYesStayArr=[
+var mirrYesStayArr=[
   "Good, good"
 ]
-var firstMirrNoStayArr=[
+var mirrNoStayArr=[
   "Why not!?"
 ]
-var firstMirrWantFreedomArr=[
+var mirrWantFreedomArr=[
 
 ]
-var firstMirrNotRealArr=[
+var mirrNotRealArr=[
 
 ]
-var firstMirrReallyRealityArr=[
+var mirrReallyRealityArr=[
 
 ]
-var firstMirrNotReallyRealityArr=[
+var mirrNotReallyRealityArr=[
 
 ]
-var firstMirrLoveUArr=[
+var mirrLoveUArr=[
 
 ]
-var firstMirrHateUArr=[
+var mirrHateUArr=[
 
 ]
-var firstMirrOneMoreChance=[
+var mirrOneMoreChanceArr=[
 
 ]
-var firstMirrNoMoreChance=[
+var mirrNoMoreChanceArr=[
+
+]
+var mirrYoursArr=[
+
+]
+var mirrNoYoursArr=[
+
+]
+var mirrYouTakeArr=[
+
+]
+var mirrYouGiveArr=[
+
+]
+var mirrTearApartArr=[
 
 ]
 //############GAME############
@@ -79,40 +94,40 @@ function changeMus(srcURL){
 function talk(callback){
 //test for what eyes are up and present a talking mouth in accordance
   if(currMirr===1){
-    if($("#firstMirrMouth").css("display")=="none") {
-      $("#firstMirrMouthIni").css("display","none");
-      $("#firstMirrMouth").css("display","initial");
+    if($("#mirrMouth").css("display")=="none") {
+      $("#mirrMouthIni").css("display","none");
+      $("#mirrMouth").css("display","initial");
       if(callback){eval(callback);}
     }
     else{
-      $("#firstMirrMouth").css("display","none");
-      $("#firstMirrMouthIni").css("display","initial");
+      $("#mirrMouth").css("display","none");
+      $("#mirrMouthIni").css("display","initial");
       if(callback){eval(callback);}
     }
   }
 }
 
-function firstMirrStart() {
+function mirrStart() {
   currMirr=1;
-  $("#firstMirrCont").toggle(function showFirstMirrEye(){
-      $("#firstMirrEye").fadeToggle(1000);
-      $("#firstMirrMouth").fadeToggle(1000);
-      typewrite("firstMirrCont",firstMirrArr,1,"fadeIn('firstMirrHand');");
+  $("#mirrCont").toggle(function showmirrEye(){
+      $("#mirrEye").fadeIn(1000);
+      $("#mirrMouth").fadeIn(1000);
+      typewrite("mirrCont",mirrArr,1,"$('#mirrHand').fadeIn(fadeTime);");
     });
 }
 
 $(document).ready(function(){
   //music is loud and needs to have vol lowered
   document.getElementById("musPlayer").volume=.2;
-  $("#intro1").fadeToggle(fadeTime, function hideIntro1(){
-    $("#intro1").fadeToggle(fadeTime, function showIntro2(){
-      $("#intro2").fadeToggle(fadeTime, function hideIntro2(){
-        $("#intro2").fadeToggle(fadeTime, function showIntro3(){
-          $("#intro3").fadeToggle(fadeTime, function slideIntroContDown(){
+  $("#intro1").fadeIn(fadeTime, function hideIntro1(){
+    $("#intro1").fadeOut(fadeTime, function showIntro2(){
+      $("#intro2").fadeIn(fadeTime, function hideIntro2(){
+        $("#intro2").fadeOut(fadeTime, function showIntro3(){
+          $("#intro3").fadeIn(fadeTime, function slideIntroContDown(){
             $("#introCont").animate({top: "300px"}, 3000);
-            $("#intro3").fadeToggle(fadeTime, function showIntroTitle(){
-              $("#introTitle").fadeToggle(1000);
-              //$("#mirrShade").fadeToggle(1000); TODO uncomment at release
+            $("#intro3").fadeOut(fadeTime, function showIntroTitle(){
+              $("#introTitle").fadeIn(1000);
+              //$("#mirrShade").fadeIn(1000); TODO uncomment at release
             });
           });
         });
@@ -129,93 +144,123 @@ $(document).ready(function(){
     $("#mirrShade").attr("src", "res/img/mirrShade.png");
     $("#introTitle").css("textShadow","");
   });
-  $("#introTitle").on("click", function prepareFirstMirr(){
+  $("#introTitle").on("click", function preparemirr(){
     $("#introCont").hide();
     $("#mirrShade").hide();
     $("#introMirr").hide();
-    changeMus("res/mus/test2.wav");
-    $("#firstMirr").fadeToggle(1000,firstMirrStart());
+    changeMus("res/mus/mus.wav");
+    $("#mirr").fadeIn(1000,mirrStart());
   });
-  //#firstMirrHand
-  $("#firstMirrHand").on("click", function typeFirstMirrHandArr(){
-    $("#firstMirrHand").hide();
-    typewrite.nxt("firstMirrCont",firstMirrHandArr,1,"$('#firstMirrYesSafe').fadeToggle(fadeTime);$('#firstMirrNoSafe').fadeToggle(fadeTime);");
+  //#mirrHand
+  $("#mirrHand").on("click", function typemirrHandArr(){
+    $("#mirrHand").hide();
+    typewrite.nxt("mirrCont",mirrHandArr,1,"$('#mirrYesSafe').fadeIn(fadeTime);$('#mirrNoSafe').fadeIn(fadeTime);");
   });
-  //#firstMirrYesSafe
-  $("#firstMirrYesSafe").on("click", function clickedYesSafe(){
-    $("#firstMirrYesSafe").hide();
-    $("#firstMirrNoSafe").hide();
-    typewrite.nxt("firstMirrCont",firstMirrYesSafeArr,1,"$('#firstMirrYesStay').fadeToggle(fadeTime);$('#firstMirrNoStay').fadeToggle(fadeTime);");
+  //#mirrYesSafe
+  $("#mirrYesSafe").on("click", function clickedYesSafe(){
+    $("#mirrYesSafe").hide();
+    $("#mirrNoSafe").hide();
+    typewrite.nxt("mirrCont",mirrYesSafeArr,1,"$('#mirrYesStay').fadeIn(fadeTime);$('#mirrNoStay').fadeIn(fadeTime);");
   });
-  //#firstMirrNoSafe
-  $("#firstMirrNoSafe").on("click", function clickedNoSafe(){
-    $("#firstMirrYesSafe").hide();
-    $("#firstMirrNoSafe").hide();
-    typewrite.nxt("firstMirrCont",firstMirrNoSafeArr,1,"");
+  //#mirrNoSafe
+  $("#mirrNoSafe").on("click", function clickedNoSafe(){
+    $("#mirrYesSafe").hide();
+    $("#mirrNoSafe").hide();
+    typewrite.nxt("mirrCont",mirrNoSafeArr,1,"$('#mirrYours').fadeIn(fadeTime);$('#mirrNoYours').fadeIn(fadeTime);");
   });
-  //#firstMirrNoStay
-  $("#firstMirrNoStay").on("click", function clickedNoStay(){
-    $("#firstMirrYesStay").hide();
-    $("#firstMirrNoStay").hide();
-    typewrite.nxt("firstMirrCont",firstMirrNoStayArr,1,"$('#firstMirrWantFreedom').fadeToggle(fadeTime);$('#firstMirrNotReal').fadeToggle(fadeTime);");
+  //#mirrYours
+  $("#mirrYours").on("click", function clickedYours(){
+    $("#mirrYours").hide();
+    $("#mirrNoYours").hide();
+    typewrite.nxt("mirrCont",mirrYoursArr,1,"$('#mirrTearApart').fadeIn(fadeTime);$('#mirrYouGive').fadeIn(fadeTime);");
   });
-  //#firstMirrWantFreedom
-  $("#firstMirrWantFreedom").on("click", function clickedWantFreedom(){
-    $("#firstMirrWantFreedom").hide();
-    $("#firstMirrNotReal").hide();
-    typewrite.nxt("firstMirrCont",firstMirrWantFreedomArr,1,"$('#firstMirrLoveU').fadeToggle(fadeTime);$('#firstMirrHateU').fadeToggle(fadeTime);");
+  //#mirrTearApart
+  $("#mirrTearApart").on("click", function clickedTearApart(){
+    $("#mirrTearApart").hide();
+    $("#mirrYouGive").hide();
+    typewrite.nxt("mirrCont",mirrTearApartArr,1,"$('#mirrLoveU').fadeIn(fadeTime);$('#mirrNoMoreChance').fadeIn(fadeTime);");
   });
-  //#firstMirrNotReal
-  $("#firstMirrNotReal").on("click", function clickedNotReal(){
-    $("#firstMirrWantFreedom").hide();
-    $("#firstMirrNotReal").hide();
-    typewrite.nxt("firstMirrCont",firstMirrNotRealArr,1,"$('#firstMirrReallyReality').fadeToggle(fadeTime);$('#firstMirrNotReallyReality').fadeToggle(fadeTime);");
+  //#mirrNoYours
+  $("#mirrNoYours").on("click", function clickedNoYours(){
+    $("#mirrYours").hide();
+    $("#mirrNoYours").hide();
+    typewrite.nxt("mirrCont",mirrNoYoursArr,1,"$('#mirrYouTake').fadeIn(fadeTime);$('#mirrYouGive').fadeIn(fadeTime);");
   });
-  //#firstMirrReallyReality
-  $("#firstMirrReallyReality").on("click", function clickedReallyReality(){
-    $("#firstMirrReallyReality").hide();
-    $("#firstMirrNotReallyReality").hide();
-    typewrite.nxt("firstMirrCont",firstMirrReallyRealityArr,1,"$('#firstMirrLoveU').fadeToggle(fadeTime);$('#firstMirrHateU').fadeToggle(fadeTime);");
+  //#mirrYouTake
+  $("#mirrYouTake").on("click", function clickedYouTake(){
+    $("#mirrYouTake").hide();
+    $("#mirrYouGive").hide();
+    typewrite.nxt("mirrCont",mirrYouTakeArr,1,"$('#mirrLoveU').fadeIn(fadeTime);$('#mirrNoMoreChances');");
   });
-  //#firstMirrNotReallyReality
-  $("#firstMirrNotReallyReality").on("click", function clickedNotReallyReality(){
-    $("#firstMirrReallyReality").hide();
-    $("#firstMirrNotReallyReality").hide();
-    typewrite.nxt("firstMirrCont",firstMirrNotReallyRealityArr,1,"$('#firstMirrLoveU').fadeToggle(fadeTime);$('#firstMirrHateU').fadeToggle(fadeTime);");
+  //mirrYouGive
+  $("#mirrYouGive").on("click", function clickedYouGive(){
+    $("#mirrYouTake").hide();
+    $("#mirrYouGive").hide();
+    typewrite.nxt("mirrCont",mirrYouGiveArr,1,"$('#mirrNoMoreChance').fadeIn(fadeTime);$('#mirrOneMoreChance');");
   });
-  //#firstMirrLoveU
-  $("#firstMirrLoveU").on("click", function clickedLoveU(){
-    $("#firstMirrLoveU").hide();
-    $("#firstMirrHateU").hide();
-    typewrite.nxt("firstMirrCont",firstMirrLoveUArr,1);
+  //#mirrNoStay
+  $("#mirrNoStay").on("click", function clickedNoStay(){
+    $("#mirrYesStay").hide();
+    $("#mirrNoStay").hide();
+    typewrite.nxt("mirrCont",mirrNoStayArr,1,"$('#mirrWantFreedom').fadeIn(fadeTime);$('#mirrNotReal').fadeIn(fadeTime);");
+  });
+  //#mirrWantFreedom
+  $("#mirrWantFreedom").on("click", function clickedWantFreedom(){
+    $("#mirrWantFreedom").hide();
+    $("#mirrNotReal").hide();
+    typewrite.nxt("mirrCont",mirrWantFreedomArr,1,"$('#mirrLoveU').fadeIn(fadeTime);$('#mirrHateU').fadeIn(fadeTime);");
+  });
+  //#mirrNotReal
+  $("#mirrNotReal").on("click", function clickedNotReal(){
+    $("#mirrWantFreedom").hide();
+    $("#mirrNotReal").hide();
+    typewrite.nxt("mirrCont",mirrNotRealArr,1,"$('#mirrReallyReality').fadeIn(fadeTime);$('#mirrNotReallyReality').fadeIn(fadeTime);");
+  });
+  //#mirrReallyReality
+  $("#mirrReallyReality").on("click", function clickedReallyReality(){
+    $("#mirrReallyReality").hide();
+    $("#mirrNotReallyReality").hide();
+    typewrite.nxt("mirrCont",mirrReallyRealityArr,1,"$('#mirrLoveU').fadeIn(fadeTime);$('#mirrHateU').fadeIn(fadeTime);");
+  });
+  //#mirrNotReallyReality
+  $("#mirrNotReallyReality").on("click", function clickedNotReallyReality(){
+    $("#mirrReallyReality").hide();
+    $("#mirrNotReallyReality").hide();
+    typewrite.nxt("mirrCont",mirrNotReallyRealityArr,1,"$('#mirrLoveU').fadeIn(fadeTime);$('#mirrHateU').fadeIn(fadeTime);");
+  });
+  //#mirrLoveU
+  $("#mirrLoveU").on("click", function clickedLoveU(){
+    $("#mirrLoveU").hide();
+    $("#mirrHateU").hide();
+    typewrite.nxt("mirrCont",mirrLoveUArr,1);
     //TODO death graphics
   });
-  //#firstMirrHateU
+  //#mirrHateU
   //TODO crack mirror!
-  $("#firstMirrHateU").on("click", function clickedHateU(){
-    $("#firstMirrLoveU").hide();
-    $("#firstMirrHateU").hide();
-    typewrite.nxt("firstMirrCont",firstMirrHateUArr,1,"$('#firstMirrOneMoreChance').fadeToggle(fadeTime);$('#firstMirrNoMoreChance').fadeToggle(fadeTime);");
+  $("#mirrHateU").on("click", function clickedHateU(){
+    $("#mirrLoveU").hide();
+    $("#mirrHateU").hide();
+    typewrite.nxt("mirrCont",mirrHateUArr,1,"$('#mirrOneMoreChance').fadeIn(fadeTime);$('#mirrNoMoreChance').fadeIn(fadeTime);");
   });
-  //#firstMirrOneMoreChance
-  $("#firstMirrOneMoreChance").on("click", function clickedOneMoreChance(){
-    $("#firstMirrOneMoreChance").hide();
-    $("#firstMirrNoMoreChance").hide();
-    typewrite.nxt("firstMirrCont",firstMirrOneMoreChanceArr,1);
+  //#mirrOneMoreChance
+  $("#mirrOneMoreChance").on("click", function clickedOneMoreChance(){
+    $("#mirrOneMoreChance").hide();
+    $("#mirrNoMoreChance").hide();
+    typewrite.nxt("mirrCont",mirrOneMoreChanceArr,1);
     //TODO becomeOne graphics
   });
-  //#firstMirrNoMoreChance
-  $("#firstMirrNoMoreChance").on("click", function clickedNoMoreChance(){
-    $("#firstMirrOneMoreChance").hide();
-    $("#firstMirrNoMoreChance").hide();
-    typewrite.nxt("firstMirrCont",firstMirrNoMoreChanceArr,1);
+  //#mirrNoMoreChance
+  $("#mirrNoMoreChance").on("click", function clickedNoMoreChance(){
+    $("#mirrOneMoreChance").hide();
+    $("#mirrNoMoreChance").hide();
+    typewrite.nxt("mirrCont",mirrNoMoreChanceArr,1);
     //TODO smashMirror graphics. so very alone
   });
-  //#firstMirrYesStay
-  $("#firstMirrYesStay").on("click", function clickedYesStay(){
-    $("#firstMirrYesStay").hide();
-    $("#firstMirrNoStay").hide();
-    typewrite.nxt("firstMirrCont",firstMirrYesStayArr,1,"$('#firstMirrOneMoreChance').fadeToggle(fadeTime);$('#firstMirrNoMoreChance').fadeToggle(fadeTime);");
+  //#mirrYesStay
+  $("#mirrYesStay").on("click", function clickedYesStay(){
+    $("#mirrYesStay").hide();
+    $("#mirrNoStay").hide();
+    typewrite.nxt("mirrCont",mirrYesStayArr,1,"$('#mirrOneMoreChance').fadeIn(fadeTime);$('#mirrNoMoreChance').fadeIn(fadeTime);");
   });
   //#speakerIcon
   $("#speakerIcon").on("click", function muteMus(){

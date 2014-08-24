@@ -76,7 +76,7 @@ p {
     width: 800px;
 }
 
-#firstMirr {
+#mirr {
   display: none;
   margin: 0px 0px 0px -300px;
   padding: 0px;
@@ -87,14 +87,14 @@ p {
   width: 600px;
 }
 
-#firstMirrCont {
+#mirrCont {
   display: none;
   margin: 25px auto auto auto;
   width: 600px;
   text-align: left;
 }
 
-#firstMirrEye {
+#mirrEye {
   opacity: .4;
   display: none;
   margin: 0px 0px 0px -300px;
@@ -106,7 +106,7 @@ p {
   width: 600px;
 }
 
-#firstMirrMouth {
+#mirrMouth {
   opacity: .4;
   display: none;
   margin: 0px 0px 0px -300px;
@@ -118,7 +118,7 @@ p {
   width: 600px;
 }
 
-#firstMirrMouthIni {
+#mirrMouthIni {
   opacity: .4;
   display: none;
   margin: 0px 0px 0px -300px;
@@ -130,14 +130,14 @@ p {
   width: 600px;
 }
 
-#firstMirrOpt {
+#mirrOpt {
   margin: 530px auto 0px auto;
   font-size: 20px;
   height: 50px;
   width: 550px;
 }
 
-#firstMirrOpt p:hover, #firstMirrOpt div p:hover{
+#mirrOpt p:hover, #mirrOpt div p:hover{
   text-shadow: 3px 3px 3px #271f2b;
 }
 
