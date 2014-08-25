@@ -9,21 +9,24 @@
     <meta name="author" content="Ryan Combes">
     <meta name="description" content="LD30 Entry">
     <link rel="stylesheet" type="text/css" href="res/css/main.css">
-    <title>Mirrors(working title)</title>
+    <title>Mirrors</title>
   </head>
   <body class="unselectable">
     <img id="speakerIcon" src="res/mus/speaker.png">
+    <img id="ffIcon" src="res/img/ffEmpty.png">
+    <div id="retry">retry</div>
     <!--INTRO-->
     <img id="introMirr" src="res/img/introMirr.png" draggable="false">
     <img id="mirrShade" src="res/img/mirrShade.png" draggable="false">
-    <!--FIRST MIRR-->
+    <!--MIRR-->
     <img id="mirr" src="res/img/mirr.png" draggable="false">
     <img id="mirrEye" src="res/img/mirrEye.gif" draggable="false">
     <img id="mirrMouthIni" src="res/img/mirrMouthIni.png" draggable="false">
     <img id="mirrMouth" src="res/img/mirrMouth.gif" draggable="false">
+    <img id="mirrCracks" src="res/img/mirrCracks.png" draggable="false">
     <div id="introCont">
       <p id="intro1">
-        Have you ever peered into the steely depths of a mirror?
+        Have you ever peered close into the mirror-like depths of your heart?
       </p>
       <p id="intro2">
         Carefully watched the eyes of your reflection staring back at you?
@@ -41,54 +44,66 @@
       </p>
       <div class="optLeft">
         <p id="mirrNoSafe">
-          No
+          "No"
         </p>
         <p id="mirrNoStay">
-          No, I want out.
+          "No, I want out"
         </p>
         <p id="mirrNotReal">
+          "You're not real!"
         </p>
-        <p id="mirrNotReallyReality">
+        <p id="mirrNotReallyReality"><!--you're still not real?-->
+          "No, you're my<br>fears incarnate"
         </p>
         <p id="mirrHateU">
+          "No, never."
         </p>
         <p id="mirrNoMoreChance">
+          Smash the mirror
         </p>
         <p id="mirrNoYours">
+          "I am not yours"
         </p>
         <p id="mirrYouTake">
+          "I don't need<br>your help anymore"
         </p>
         <p id="mirrTearApart">
+          "You've been<br>tearing me apart"
         </p>
       </div>
       <div class="optRight">
         <p id="mirrYesSafe">
-          Yes
+          "Yes"
         </p>
         <p id="mirrYesStay">
-          Okay. You've always been there.
+          "Okay, you've always<br>been there for me"
         </p>
         <p id="mirrWantFreedom">
+          "I want freedom"
         </p>
         <p id="mirrReallyReality">
+          "Y-You've done a lot..."
         </p>
         <p id="mirrLoveU">
+          "Okay, I trust you"
         </p>
         <p id="mirrOneMoreChance">
+          Place your palm against theirs
         </p>
         <p id="mirrYours">
+          "You are mine<br>and I'm yours"
         </p>
         <p id="mirrYouGive">
+          "You're right..."
         </p>
       </div>
     </div>
     <div id="mirrCont"></div>
-
     <audio id="musPlayer" autoplay loop>
       <source id="musSrc" src="" type="audio/wav">
     </audio>
-    <script src="res/js/jquery-1.11.1.js"></script>
-    <script src="res/js/main.js"></script>
-    <script src="res/js/old.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="res/js/main.min.js"></script>
+    <script src="res/js/old.min.js"></script>
   </body>
 </html>
